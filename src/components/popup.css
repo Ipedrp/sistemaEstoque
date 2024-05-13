@@ -1,0 +1,45 @@
+.popup {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50; /* Cor de fundo verde */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .popup.show {
+    opacity: 1;
+  }
+  
+  .popup.hide {
+    display: none;
+  }
+  
+  .progressBar {
+    height: 5px; /* Altura da barra de progresso */
+    background-color: rgba(255, 255, 255, 0.3); /* Cor de fundo da barra de progresso */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Largura da barra de progresso */
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); /* Cor da barra de progresso */
+    width: 100%;
+    animation: progressBarAnimation 4s linear;
+  }
+  
+  @keyframes progressBarAnimation {
+    0% {
+      width: 100%;
+    }
+    100% {
+      width: 0;
+    }
+  }

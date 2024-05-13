@@ -1,0 +1,78 @@
+.inline{
+    display: flex;
+}
+
+.inline p{
+    font-size: 25px;
+    color: #0056b3;
+    margin-right: 10px
+}
+
+.btn-sair{
+    
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5em;
+    padding: 4px 9px;
+    
+  
+}
+
+.btn-sair:hover{
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.btn-visualizar-adm{
+    background-color: hsl(37, 70%, 42%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 4px 9px;
+  }
+  
+.btn-visualizar-adm:hover{
+    background-color: #775216;
+    font-size: 17px;
+  }
+
+.btn-cadastrar-adm{
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 4px 9px;
+  }
+  
+.btn-cadastrar-adm:hover{
+    background-color: #053261;
+    font-size: 17px;
+  }
+
+.btn-vender-adm{
+    background-color: #118d04;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 4px 9px;
+  }
+  
+.btn-vender-adm:hover{
+    background-color: #0e4108;
+    font-size: 17px;
+  }
+
+.btn-calendario-adm{
+    background-color: #FC4100;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 4px 9px;
+}
+
+.btn-calendario-adm:hover{
+  background-color: #802507;
+  font-size: 17px;
+}
