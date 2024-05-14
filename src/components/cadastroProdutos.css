@@ -3,6 +3,10 @@
   background-color: #0056b3;
 }
 
+.nav-link {
+  color: white !important;
+}
+
 /* css do formulario de cadastro */
 .custom-container {
     border: 2px solid #dee2e6;

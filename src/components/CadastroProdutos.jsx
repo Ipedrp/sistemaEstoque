@@ -39,10 +39,18 @@ export default function CadastroProdutos() {
             console.log("Produto criado:", produto.id);
             console.log("Produto Criado");
             Swal.fire({
+                title: "Produto cadastrado!",
                 icon: "success",
-                title: "Produto cadastrado!"
-                
-              });
+                // showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                // cancelButtonColor: "#d33",
+                confirmButtonText: "Feito"
+            }).then((result) => { 
+                if (result.isConfirmed) {
+                    window.location.href = "/cp";
+
+                }
+            });
         } catch (error) {
             console.error("Erro ao criar produto:", error);
             Swal.fire({
@@ -58,10 +66,18 @@ export default function CadastroProdutos() {
         await deleteDoc(produtoDoc);
         console.log("deletado");
         Swal.fire({
+            title: "Produto deletado!",
             icon: "success",
-            title: "Produto deletado!"
-            
-          });
+            // showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            // cancelButtonColor: "#d33",
+            confirmButtonText: "Feito"
+        }).then((result) => { 
+            if (result.isConfirmed) {
+                window.location.href = "/cp";
+
+            }
+        });
     }
 
     async function atualizarProduto(produto) {
@@ -74,10 +90,18 @@ export default function CadastroProdutos() {
         });
         setEditandoProduto(null);
         Swal.fire({
+            title: "Produto atualizado!",
             icon: "success",
-            title: "Produto atualizado!"
-            
-          });
+            // showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            // cancelButtonColor: "#d33",
+            confirmButtonText: "Feito"
+        }).then((result) => { 
+            if (result.isConfirmed) {
+                window.location.href = "/cp";
+
+            }
+        });
     }
 
     async function venderProduto(produto) {
@@ -93,12 +117,19 @@ export default function CadastroProdutos() {
                 totalVenda: vendendoProduto.valorVenda * quantidadeVendida
                 // Se houver outros campos relevantes para a venda, adicione-os aqui
             });
-            setVendendoProduto(null); // Resetar o estado após a venda
             Swal.fire({
+                title: "Produto vendido!",
                 icon: "success",
-                title: "Produto vendido!"
-                
-              });
+                // showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                // cancelButtonColor: "#d33",
+                confirmButtonText: "Feito"
+            }).then((result) => { 
+                if (result.isConfirmed) {
+                    window.location.href = "/cp";
+
+                }
+            });
         } catch (error) {
             console.error("Erro ao vender produto:", error);
             Swal.fire({

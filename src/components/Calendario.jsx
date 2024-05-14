@@ -8,9 +8,12 @@ import { getDocs } from "firebase/firestore";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import DatePicker from "react-datepicker";
+import interactionPlugin from '@fullcalendar/interaction';
+import allLocales from '@fullcalendar/core/locales-all'; 
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
 import logo from '../assets/4.png'; 
+import "./calendario.css";
 
 
 
@@ -50,11 +53,20 @@ export function Calendario(){
             });
             console.log("Evento criado:", produto.id);
             console.log("Evento Criado");
+           
             Swal.fire({
+                title: "Evento criado!",
                 icon: "success",
-                title: "Evento criado!"
-                
-              });
+                // showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                // cancelButtonColor: "#d33",
+                confirmButtonText: "Feito"
+            }).then((result) => { 
+                if (result.isConfirmed) {
+                    window.location.href = "/calendario";
+
+                }
+            });
         } catch (error) {
             console.error("Erro ao criar evento:", error);
             Swal.fire({
@@ -124,8 +136,10 @@ export function Calendario(){
             </div>
             {console.log(eventos)}
             <FullCalendar
-                plugins={[ dayGridPlugin ]}
+                plugins={[ dayGridPlugin, interactionPlugin ]}
                 initialView="dayGridMonth"
+                locales={[allLocales]} // Adicione a localização importada aqui
+                locale="pt" // Defina o idioma padrão para português  
                 events={eventos.map(evento => ({
                     title: evento.texto,
                     start: evento.data
